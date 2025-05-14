@@ -1,0 +1,29 @@
+/* style.css */
+:root {
+  --fc-border-color: black;
+  --fc-button-bg-color: #3a87ad;
+  --fc-daygrid-event-dot-width: 5px;
+}
+
+#calendar {
+  margin: 5em;
+  padding: 1em;
+  background: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}

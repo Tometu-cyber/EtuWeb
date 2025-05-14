@@ -1,0 +1,5 @@
+# Ignorer le dossier de tests
+/test/
+
+# Ignorer les fichiers système macOS
+.DS_Store

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendrier ADE</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.3.0/dist/fullcalendar.min.css" rel="stylesheet">
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/index.global.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ical.js/1.4.0/ical.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/favicon.ico">
+</head>
+<body>
+    <div class="min-h-screen flex flex-col">
+        <!-- Navigation -->
+        <nav class="bg-gradient-to-r from-blue-600 to-indigo-900 text-white shadow-md">
+            <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838l-2.727 1.17 1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                    </svg>
+                    EtuWeb
+                </a>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="hover:text-blue-200 transition duration-300 font-medium">Accueil</a>
+                    <a href="notes.html" class="hover:text-blue-200 transition duration-300 font-medium">Notes</a>
+                    <a href="calendar.html" class="hover:text-blue-200 transition duration-300 font-medium">Calendrier</a>
+                </div>
+            </div>
+        </nav>
+        <main class="flex-grow container mx-auto px-4"></main>
+            <h1 style="text-align:center;" class="text-center text-4xl font-bold text-gray-800 mb-8">Mon Calendrier ADE</h1>
+
+            <div id="calendar"></div>
+        </main>
+
+        <footer class="bg-gray-800 text-white py-8">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-4 md:mb-0">
+                        <span class="font-bold text-xl">EtuWeb</span>
+                        <p class="text-gray-400 mt-1">© 2025 - Tous droits réservés</p>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">Contact</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">Aide</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">Mentions légales</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var calendarEl = document.getElementById('calendar');
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'timeGridWeek',
+        firstDay: 1,
+        locale: 'fr',
+        slotLabelFormat: {
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: false
+        },
+        weekends: false,
+        headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'dayGridMonth,timeGridWeek,timeGridDay'
+        },
+        eventDidMount: function(info) {
+            if (info.event.extendedProps.location) {
+            // Ajoute le lieu en dessous du titre
+            const locationEl = document.createElement('div');
+            locationEl.style.marginTop = '2px';
+            locationEl.innerText = info.event.extendedProps.location;
+            info.el.querySelector('.fc-event-title')?.appendChild(locationEl);
+            }
+        }
+      });
+      calendar.render();
+
+      fetch("https://edtweb.univ-cotedazur.fr/jsp/custom/modules/plannings/anonymous_cal.jsp?resources=15866&projectId=4&calType=ical&firstDate=2024-07-01&lastDate=2025-08-01")
+        .then(response => response.text())
+        .then(data => {
+          const jcalData = ICAL.parse(data);
+          const comp = new ICAL.Component(jcalData);
+          const vevents = comp.getAllSubcomponents("vevent");
+
+          const events = vevents.map(evt => {
+            const e = new ICAL.Event(evt);
+            return {
+              title: e.summary,
+              start: e.startDate.toJSDate(),
+              end: e.endDate.toJSDate(),
+              location: e.location
+            };
+          });
+
+          calendar.addEventSource(events);
+        });
+    });
+  </script>
+
+</body>
+</html>

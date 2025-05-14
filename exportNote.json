@@ -1,0 +1,66 @@
+[
+    {
+        "name": " TBRAE301 : SAÉ 3.01",
+        "notes": [
+            {
+                "note": 15.0,
+                "coeff": 0.6
+            },
+            {
+                "note": 18.0,
+                "coeff": 0.8
+            },
+            {
+                "note": 16.561,
+                "coeff": 0.5
+            },
+            {
+                "note": 13.892,
+                "coeff": 0.5
+            }
+        ],
+        "moyennepdf": 16.113
+    },
+    {
+        "name": " TBRAE302 : SAÉ 3.02",
+        "notes": [
+            {
+                "note": 7.5,
+                "coeff": 0.5
+            },
+            {
+                "note": 7.5,
+                "coeff": 0.5
+            },
+            {
+                "note": 8.0,
+                "coeff": 3.0
+            }
+        ],
+        "moyennepdf": 7.875
+    },
+    {
+        "name": " TBRAE303 : SAÉ 3.03",
+        "notes": [
+            {
+                "note": 17.5,
+                "coeff": 0.5
+            }
+        ],
+        "moyennepdf": 17.5
+    },
+    {
+        "name": " TBRAE304 : SAÉ 3.04",
+        "notes": [
+            {
+                "note": 14.0,
+                "coeff": 1.0
+            },
+            {
+                "note": 8.0,
+                "coeff": 1.0
+            }
+        ],
+        "moyennepdf": 11.0
+    }
+]
