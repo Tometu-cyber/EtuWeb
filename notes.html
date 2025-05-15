@@ -57,64 +57,76 @@
     </footer>
   </div>
 
-  <script>
-    // Fonction pour charger les données JSON depuis le fichier exportNote.json
-    fetch('exportNote.json')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Erreur de chargement du fichier JSON');
-        }
-        return response.json();
-      })
-      .then(data => {
-        const container = document.getElementById("modules-container");
+<script>
+  fetch('notes/S1.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Erreur de chargement du fichier JSON');
+      }
+      return response.json();
+    })
+    .then(data => {
+      const container = document.getElementById("modules-container");
 
-        // Si les données existent
-        if (Array.isArray(data)) {
-          data.forEach(module => {
-            const card = document.createElement("div");
-            card.className = "card bg-white p-6 rounded-lg shadow-md";
+      if (!data || !Array.isArray(data.grades)) {
+        throw new Error("Format JSON invalide");
+      }
 
-            const title = document.createElement("h2");
-            title.className = "text-xl font-semibold mb-3 text-indigo-700";
-            title.textContent = module.name;
-            card.appendChild(title);
+      data.grades.forEach(module => {
+        const card = document.createElement("div");
+        card.className = "card bg-white p-6 rounded-lg shadow-md flex flex-col justify-between";
 
-            if (module.notes.length > 0) {
-              const ul = document.createElement("ul");
-              ul.className = "mb-4 space-y-1";
+        const title = document.createElement("h2");
+        title.className = "text-xl font-semibold mb-3 text-indigo-700";
+        title.textContent = module.name;
+        card.appendChild(title);
 
-              module.notes.forEach(note => {
-                const li = document.createElement("li");
-                li.className = "flex justify-between text-gray-700";
-                li.innerHTML = `
-                  <span>Note : <strong>${parseFloat(note.note).toFixed(2)}</strong></span>
-                  <span>Coeff : ${parseFloat(note.coeff)}</span>
-                `;
-                ul.appendChild(li);
-              });
+        const teacher = document.createElement("p");
+        teacher.className = "text-sm text-gray-500 mb-2";
+        teacher.textContent = `Prof : ${module.teacher}`;
+        card.appendChild(teacher);
 
-              card.appendChild(ul);
+        if (module.grades.length > 0) {
+          const ul = document.createElement("ul");
+          ul.className = "mb-4 space-y-1";
 
-              const moyennepdf = document.createElement("p");
-              moyennepdf.className = "text-right font-bold text-blue-700";
-              moyennepdf.textContent = `Moyenne : ${parseFloat(module.moyennepdf).toFixed(3)}`;
-              card.appendChild(moyennepdf);
-            } else {
-              const noNotes = document.createElement("p");
-              noNotes.className = "italic text-gray-500";
-              noNotes.textContent = "Aucune note pour ce module.";
-              card.appendChild(noNotes);
-            }
-
-            container.appendChild(card);
+          module.grades.forEach(entry => {
+            const [comment, grade] = entry;
+            const li = document.createElement("li");
+            li.className = "flex justify-between text-gray-700";
+            li.innerHTML = `
+              ${
+                grade.length === 2
+                  ? `
+                    <span>Note : <strong>${parseFloat(grade[0]).toFixed(2)}</strong></span>
+                    <span>Coeff : ${parseFloat(grade[1])}</span>
+                    `
+                  : `<span class="w-full"><em>${grade[0]}</em></span>`
+              }
+            `;
+            ul.appendChild(li);
           });
+
+          card.appendChild(ul);
+        } else {
+          const noNotes = document.createElement("p");
+          noNotes.className = "italic text-gray-500";
+          noNotes.textContent = "Aucune note pour ce module.";
+          card.appendChild(noNotes);
         }
-      })
-      .catch(error => {
-        console.error('Erreur:', error);
+
+        const moyenne = document.createElement("p");
+        moyenne.className = "text-right font-bold text-blue-700 mt-auto";
+        moyenne.textContent = `Moyenne : ${module.average}`;
+        card.appendChild(moyenne);
+
+        container.appendChild(card);
       });
+    })
+    .catch(error => {
+      console.error('Erreur:', error);
+    });
   </script>
+
 </body>
 </html>
-
