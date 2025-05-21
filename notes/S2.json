@@ -4,7 +4,7 @@
     "position": "17/64",
     "grades": [
         {
-            "name": "TBRAE101 : SAÉ 1.01",
+            "name": "TBRAE201 : SAÉ 2.01",
             "teacher": "Monsieur Apple",
             "average": "16.113",
             "grades": [
@@ -40,7 +40,7 @@
             "empty": ""
         },
         {
-            "name": "TBRAE102 : SAÉ 1.02",
+            "name": "TBRAE202 : SAÉ 2.02",
             "teacher": "Monsieur Banana",
             "average": "7.875",
             "grades": [
@@ -69,7 +69,7 @@
             "empty": ""
         },
         {
-            "name": "TBRAE103 : SAÉ 1.03",
+            "name": "TBRAE203 : SAÉ 2.03",
             "teacher": "Monsieur Cherry",
             "average": "11.0",
             "grades": [

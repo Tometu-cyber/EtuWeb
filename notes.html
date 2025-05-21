@@ -34,6 +34,11 @@
         <p class="text-lg text-gray-600">Voici le détail de vos modules et résultats</p>
       </div>
 
+      <div class="text-center mb-8">
+        <p class="text-sm text-gray-600 mb-2">Choisissez le semestre pour afficher les notes correspondantes :</p>
+        <select id="file-selector" class="p-2 border rounded"></select>
+      </div>
+
       <div id="modules-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
         <!-- Les cartes de notes seront injectées ici -->
       </div>
@@ -58,75 +63,86 @@
   </div>
 
 <script>
-  fetch('notes/S1.json')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Erreur de chargement du fichier JSON');
-      }
-      return response.json();
-    })
-    .then(data => {
-      const container = document.getElementById("modules-container");
+  const selector = document.getElementById("file-selector");
+  const container = document.getElementById("modules-container");
 
-      if (!data || !Array.isArray(data.grades)) {
-        throw new Error("Format JSON invalide");
-      }
+  function loadNotes(filename) {
+    fetch(`notes/${filename}`)
+      .then(r => r.ok ? r.json() : Promise.reject("Erreur JSON"))
+      .then(data => {
+        container.innerHTML = "";
 
-      data.grades.forEach(module => {
-        const card = document.createElement("div");
-        card.className = "card bg-white p-6 rounded-lg shadow-md flex flex-col justify-between";
+        if (!data || !Array.isArray(data.grades)) throw new Error("Format invalide");
 
-        const title = document.createElement("h2");
-        title.className = "text-xl font-semibold mb-3 text-indigo-700";
-        title.textContent = module.name;
-        card.appendChild(title);
+        data.grades.forEach(module => {
+          const card = document.createElement("div");
+          card.className = "card bg-white p-6 rounded-lg shadow-md flex flex-col justify-between";
 
-        const teacher = document.createElement("p");
-        teacher.className = "text-sm text-gray-500 mb-2";
-        teacher.textContent = `Prof : ${module.teacher}`;
-        card.appendChild(teacher);
+          const title = document.createElement("h2");
+          title.className = "text-xl font-semibold mb-3 text-indigo-700";
+          title.textContent = module.name;
+          card.appendChild(title);
 
-        if (module.grades.length > 0) {
-          const ul = document.createElement("ul");
-          ul.className = "mb-4 space-y-1";
+          const teacher = document.createElement("p");
+          teacher.className = "text-sm text-gray-500 mb-2";
+          teacher.textContent = `Prof : ${module.teacher}`;
+          card.appendChild(teacher);
 
-          module.grades.forEach(entry => {
-            const [comment, grade] = entry;
-            const li = document.createElement("li");
-            li.className = "flex justify-between text-gray-700";
-            li.innerHTML = `
-              ${
-                grade.length === 2
-                  ? `
-                    <span>Note : <strong>${parseFloat(grade[0]).toFixed(2)}</strong></span>
-                    <span>Coeff : ${parseFloat(grade[1])}</span>
-                    `
-                  : `<span class="w-full"><em>${grade[0]}</em></span>`
-              }
-            `;
-            ul.appendChild(li);
-          });
+          if (module.grades.length > 0) {
+            const ul = document.createElement("ul");
+            ul.className = "mb-4 space-y-1";
 
-          card.appendChild(ul);
-        } else {
-          const noNotes = document.createElement("p");
-          noNotes.className = "italic text-gray-500";
-          noNotes.textContent = "Aucune note pour ce module.";
-          card.appendChild(noNotes);
-        }
+            module.grades.forEach(entry => {
+              const [comment, grade] = entry;
+              const li = document.createElement("li");
+              li.className = "flex justify-between text-gray-700";
+              li.innerHTML = grade.length === 2
+                ? `<span>Note : <strong>${parseFloat(grade[0]).toFixed(2)}</strong></span><span>Coeff : ${parseFloat(grade[1])}</span>`
+                : `<span class="w-full"><em>${grade[0]}</em></span>`;
+              ul.appendChild(li);
+            });
 
-        const moyenne = document.createElement("p");
-        moyenne.className = "text-right font-bold text-blue-700 mt-auto";
-        moyenne.textContent = `Moyenne : ${module.average}`;
-        card.appendChild(moyenne);
+            card.appendChild(ul);
+          } else {
+            const noNotes = document.createElement("p");
+            noNotes.className = "italic text-gray-500";
+            noNotes.textContent = "Aucune note pour ce module.";
+            card.appendChild(noNotes);
+          }
 
-        container.appendChild(card);
+          const moyenne = document.createElement("p");
+          moyenne.className = "text-right font-bold text-blue-700 mt-auto";
+          moyenne.textContent = `Moyenne : ${module.average}`;
+          card.appendChild(moyenne);
+
+          container.appendChild(card);
+        });
+      })
+      .catch(err => {
+        console.error(err);
+        container.innerHTML = `<p class="text-red-600">Erreur de chargement.</p>`;
       });
+  }
+
+  // Chargement de la liste des fichiers
+  fetch("notes/index.json")
+    .then(r => r.ok ? r.json() : Promise.reject("Erreur index.json"))
+    .then(files => {
+      files.forEach(f => {
+        const option = document.createElement("option");
+        option.value = f;
+        option.textContent = f.replace(".json", "");
+        selector.appendChild(option);
+      });
+      if (files.length > 0) loadNotes(files[0]);
     })
-    .catch(error => {
-      console.error('Erreur:', error);
+    .catch(err => {
+      console.error(err);
+      selector.innerHTML = `<option disabled>Erreur chargement index</option>`;
     });
-  </script>
+
+  selector.addEventListener("change", () => loadNotes(selector.value));
+</script>
 
 </body>
 </html>
