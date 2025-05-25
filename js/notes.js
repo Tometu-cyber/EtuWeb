@@ -19,7 +19,7 @@ fetch(`notes/${filename}`)
         card.appendChild(title);
 
         const teacher = document.createElement("p");
-        teacher.className = "text-sm text-gray-500 mb-2";
+        teacher.className = "p-prof text-sm text-gray-500 mb-2";
         teacher.textContent = `Prof : ${module.teacher}`;
         card.appendChild(teacher);
 
@@ -32,15 +32,15 @@ fetch(`notes/${filename}`)
             const li = document.createElement("li");
             li.className = "flex justify-between text-gray-700";
             li.innerHTML = grade.length === 2
-            ? `<span>Note : <strong>${parseFloat(grade[0]).toFixed(2)}</strong></span><span>Coeff : ${parseFloat(grade[1])}</span>`
-            : `<span class="w-full"><em>${grade[0]}</em></span>`;
+            ? `<span class="span-note">Note : <strong>${parseFloat(grade[0]).toFixed(2)}</strong></span><span class="span-coeff">Coeff : ${parseFloat(grade[1])}</span>`
+            : `<span class="span-note w-full"><em>${grade[0]}</em></span>`;
             ul.appendChild(li);
         });
 
         card.appendChild(ul);
         } else {
         const noNotes = document.createElement("p");
-        noNotes.className = "italic text-gray-500";
+        noNotes.className = "span-note italic text-gray-500";
         noNotes.textContent = "Aucune note pour ce module.";
         card.appendChild(noNotes);
         }

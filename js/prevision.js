@@ -62,7 +62,7 @@ fetch('notes/SExemple.json')
                     const coeffs = item.CoeffsUE;
 
                     const div = document.createElement("div");
-                    const bgColorClass = (!isNaN(moyenne) && moyenne < 10) ? "bg-red-100 border-red-400" : "bg-white border-gray-200";
+                    const bgColorClass = (!isNaN(moyenne) && moyenne < 10) ? "div-moy-red bg-red-100 border-red-400" : "div-moy bg-white border-gray-200";
                     div.className = `${bgColorClass} rounded-lg shadow-md p-4 border`;
                     div.innerHTML = `
                         <h2 class="text-lg font-semibold text-gray-800 mb-2">${nom}</h2>
@@ -91,7 +91,7 @@ fetch('notes/SExemple.json')
                     ue = ue.replace("Coeff", "Moyenne");
                     console.log(ue);
 
-                    const bgColorClass = (!isNaN(moyenneUE) && moyenneUE < 10) ? "bg-red-100 border-red-400" : "bg-indigo-100 border-indigo-300";
+                    const bgColorClass = (!isNaN(moyenneUE) && moyenneUE < 10) ? "div-moy-red bg-red-100 border-red-400" : "div-moy-blue bg-indigo-100 border-indigo-300";
 
                     const div = document.createElement("div");
                     div.className = `${bgColorClass} rounded-lg shadow-md p-4 border text-center`;

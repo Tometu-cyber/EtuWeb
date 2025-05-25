@@ -27,3 +27,76 @@ body {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
+
+/* Mode sombre */
+html.dark {
+  background: #18181b;
+}
+
+html.dark body {
+  background: #18181b;
+  color: #e5e7eb;
+}
+
+html.dark .card,
+html.dark .bg-white {
+  background: #23232a !important;
+  color: #e5e7eb !important;
+}
+
+html.dark .text-gray-800,
+html.dark .text-gray-600 {
+  color: #e5e7eb !important;
+}
+
+html.dark .bg-gray-800 {
+  background: #23232a !important;
+}
+
+html.dark .bg-gray-50 {
+  background: #18181b !important;
+}
+
+html.dark .shadow-md {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5) !important;
+}
+
+html.dark .span-note,
+html.dark .span-coeff{
+  color: #e5e7eb !important;
+}
+
+html.dark .p-prof{
+  color: #c1c1c1 !important;
+}
+
+html.dark #file-selector {
+  background: #18181b !important;
+  border-color: #18181b !important;
+}
+
+html.dark .div-moy {
+  border-color: rgb(35, 35, 42) !important;
+}
+
+html.dark .div-moy-blue {
+  background-color: #3a5ed6 !important;
+  border-color: #0000ff !important;
+}
+
+html.dark .div-moy-red {
+  background-color: #fe4747 !important;
+  border-color: #ff0000 !important;
+}
+
+html.dark .div-moy-blue h2,
+html.dark .div-moy-red h2,
+html.dark .div-moy h2{
+  color: #e0e7fe !important;
+}
+
+html.dark .div-moy-blue p,
+html.dark .div-moy-red p,
+html.dark .div-moy p{
+  color: #ffffff !important;
+}
