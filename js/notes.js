@@ -64,12 +64,17 @@ fetch("notes/index.json")
 .then(r => r.ok ? r.json() : Promise.reject("Erreur index.json"))
 .then(files => {
     files.forEach(f => {
-    const option = document.createElement("option");
-    option.value = f;
-    option.textContent = f.replace(".json", "");
-    selector.appendChild(option);
+        const option = document.createElement("option");
+        option.value = f;
+        option.textContent = f.replace(".json", "");
+        selector.appendChild(option);
     });
-    if (files.length > 0) loadNotes(files[0]);
+    // Sélectionner le dernier fichier de la liste
+    const lastFile = files[files.length - 1];
+    if (lastFile) {
+        selector.value = lastFile;
+        loadNotes(lastFile);
+    }
 })
 .catch(err => {
     console.error(err);
