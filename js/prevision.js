@@ -1,4 +1,6 @@
-fetch('../notes/SExemple.json')
+const semestre = 'SExemple.json';
+
+fetch(`../notes/${semestre}`)
     .then(response => response.json())
     .then(data => {
         var prevision = [];
@@ -24,7 +26,7 @@ fetch('../notes/SExemple.json')
         }
 
         console.log(prevision);
-        fetch('../json/coeffUESExemple.json')
+        fetch(`../json/coeffUE${semestre}`)
             .then(response => response.json())
             .then(coeffUE => {
                 for (let m = 0; m < coeffUE.length; m++) {

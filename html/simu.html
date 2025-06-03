@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mes Notes - EtuWeb</title>
+  <title>Simu - EtuWeb</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="../styles/style.css">
   <link rel="shortcut icon" href="images/favicon.ico">
@@ -11,7 +11,6 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <link rel="apple-touch-icon" href="images/favicon512.png">
-
 </head>
 <body>
   <div class="min-h-screen flex flex-col">
@@ -30,7 +29,7 @@
               <a href="prevision.html" class="hover:text-blue-200 transition duration-300 font-medium text-sm md:text-base px-2 py-1">Prévision</a>
               <a href="simu.html" class="hover:text-blue-200 transition duration-300 font-medium text-sm md:text-base px-2 py-1">Simu</a>
               <a href="calendar.html" class="hover:text-blue-200 transition duration-300 font-medium text-sm md:text-base px-2 py-1">Calendrier</a>
-              <button id="dark-toggle" class="hover:text-blue-200 transition duration-300 font-medium text-sm md:text-base px-2 py-1"">🌙</button>
+              <button id="dark-toggle" class="hover:text-blue-200 transition duration-300 font-medium text-sm md:text-base px-2 py-1">🌙</button>
             </div>
         </div>
     </nav>
@@ -38,17 +37,43 @@
     <!-- Main Content -->
     <main class="flex-grow container mx-auto px-4 py-12">
       <div class="text-center mb-12">
-        <h1 class="text-3xl font-bold text-gray-800 mb-2">Relevé de Notes</h1>
-        <p class="text-lg text-gray-600">Voici le détail de vos modules et résultats</p>
+        <h1 class="text-3xl font-bold text-gray-800 mb-2">Zone de simulation</h1>
+        <p class="text-lg text-gray-600">Ici vous pouvez tester vos moyennes en ajoutant des notes fictives <br> Attention tout travail sera perdu au rechargement de la page</p>
       </div>
 
-      <div class="text-center mb-8">
-        <p class="text-sm text-gray-600 mb-2">Choisissez le semestre pour afficher les notes correspondantes :</p>
-        <select id="file-selector" class="p-2 border rounded"></select>
+      <!-- Loading indicator -->
+      <div id="loading" class="text-center py-8">
+        <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+        <p class="mt-2 text-gray-600">Chargement des données...</p>
       </div>
 
-      <div id="modules-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        <!-- Les cartes de notes seront injectées ici -->
+      <!-- Error message -->
+      <div id="error" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6">
+        <p>Erreur lors du chargement des données. Veuillez réessayer.</p>
+      </div>
+
+      <!-- Current average display -->
+      <div id="average-display" class="hidden mb-8">
+        <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-lg shadow-md p-6 text-center">
+          <div id="ue-moyennes" class="flex flex-wrap justify-center gap-4 max-h-[8rem] overflow-auto"></div>
+        </div>
+      </div>
+
+      <!-- Subjects list -->
+      <div id="subjects-container" class="hidden space-y-6 mb-8">
+        <!-- Subjects will be dynamically loaded here -->
+      </div>
+
+      <!-- Simulation controls -->
+      <div id="simulation-controls" class="hidden mb-8">
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h2 class="text-xl font-bold text-gray-800 mb-4">Actions de simulation</h2>
+          <div class="flex flex-wrap gap-4">
+            <button id="reset-btn" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded transition duration-300">
+              Réinitialiser
+            </button>
+          </div>
+        </div>
       </div>
     </main>
 
@@ -69,8 +94,8 @@
       </div>
     </footer>
   </div>
-  <script src="../js/notes.js"></script>
+
+  <script src="../js/simu.js"></script>
   <script src="../js/dark.js"></script>
 </body>
 </html>
-
