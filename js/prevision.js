@@ -1,4 +1,4 @@
-fetch('notes/SExemple.json')
+fetch('../notes/SExemple.json')
     .then(response => response.json())
     .then(data => {
         var prevision = [];
@@ -24,7 +24,7 @@ fetch('notes/SExemple.json')
         }
 
         console.log(prevision);
-        fetch('coeffUESExemple.json')
+        fetch('../json/coeffUESExemple.json')
             .then(response => response.json())
             .then(coeffUE => {
                 for (let m = 0; m < coeffUE.length; m++) {

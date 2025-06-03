@@ -2,7 +2,7 @@ const selector = document.getElementById("file-selector");
 const container = document.getElementById("modules-container");
 
 function loadNotes(filename) {
-fetch(`notes/${filename}`)
+fetch(`../notes/${filename}`)
     .then(r => r.ok ? r.json() : Promise.reject("Erreur JSON"))
     .then(data => {
     container.innerHTML = "";
@@ -60,7 +60,7 @@ fetch(`notes/${filename}`)
 }
 
 // Chargement de la liste des fichiers
-fetch("notes/index.json")
+fetch("../notes/index.json")
 .then(r => r.ok ? r.json() : Promise.reject("Erreur index.json"))
 .then(files => {
     files.forEach(f => {
