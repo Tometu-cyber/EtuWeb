@@ -1,0 +1,13 @@
+# Existing content
+.DS_Store
+*.log
+.git
+.gitignore
+README.md
+Dockerfile
+docker-compose.yml
+
+# API specific (will be handled by API service)
+api/node_modules
+api/npm-debug.log
+api/.env

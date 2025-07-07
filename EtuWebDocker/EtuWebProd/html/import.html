@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Import - EtuWeb</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="shortcut icon" href="../images/favicon.ico" />
+    <link rel="manifest" href="../json/manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon" href="../images/favicon512.png">
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Navigation -->
+    <nav class="bg-gradient-to-r from-blue-600 to-indigo-900 text-white shadow-md">
+        <div class="container mx-auto px-4 py-3 md:py-4 flex flex-col sm:flex-row justify-between items-center">
+            <a href="../index.html" class="text-xl md:text-2xl font-bold flex items-center mb-2 sm:mb-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:h-8 md:w-8 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838l-2.727 1.17 1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                </svg>
+                EtuWeb
+            </a>
+            <div class="flex items-center space-x-2 md:space-x-4">
+                <a href="../index.html" class="hover:text-blue-200 transition duration-300 font-medium text-sm md:text-base px-2 py-1">Accueil</a>
+                <a href="notes.html" class="hover:text-blue-200 transition duration-300 font-medium text-sm md:text-base px-2 py-1">Notes</a>
+                <a href="prevision.html" class="hover:text-blue-200 transition duration-300 font-medium text-sm md:text-base px-2 py-1">Prévision</a>
+                <a href="simu.html" class="hover:text-blue-200 transition duration-300 font-medium text-sm md:text-base px-2 py-1">Simu</a>
+                <a href="calendar.html" class="hover:text-blue-200 transition duration-300 font-medium text-sm md:text-base px-2 py-1">Calendrier</a>
+                <a href="import.html" class="hover:text-blue-200 transition duration-300 font-medium text-sm md:text-base px-2 py-1">Import</a>
+                <button id="dark-toggle" class="hover:text-blue-200 transition duration-300 font-medium text-sm md:text-base px-2 py-1">🌙</button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto p-5 md:p-8">
+        <!-- Upload Card -->
+        <div class="bg-white rounded-lg shadow-lg p-8 md:p-10 card transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-xl">
+            <!-- Header -->
+            <div class="text-center mb-8">
+                <h1 class="text-3xl md:text-4xl font-semibold text-gray-800 mb-3">
+                    🔽 Test Upload PDF
+                </h1>
+                <p class="text-lg text-gray-600">
+                    Testez l'upload de fichiers PDF vers votre API EtuWeb
+                </p>
+            </div>
+            
+            <!-- Upload Area -->
+            <div class="upload-area border-2 border-dashed border-gray-300 rounded-lg p-10 md:p-12 text-center mb-6 bg-gray-50 hover:bg-gray-100" id="uploadArea">
+                <div class="mb-4">
+                    <span class="text-4xl">📄</span>
+                </div>
+                <p class="text-lg text-gray-600 mb-6 font-medium">
+                    Glissez-déposez un PDF ici ou cliquez pour sélectionner
+                </p>
+                <input type="file" id="fileInput" accept=".pdf" />
+                <button class="upload-btn text-white px-6 py-3 rounded-lg font-medium shadow-md hover:shadow-lg transform transition-all duration-300" onclick="document.getElementById('fileInput').click()">
+                    Choisir un PDF
+                </button>
+            </div>
+            
+            <!-- File Info & Send Button - On same line -->
+            <div class="flex items-center gap-4 mb-6">
+                <!-- File Info -->
+                <div class="file-info bg-gray-50 rounded-lg p-4 text-sm text-gray-600 hidden" id="fileInfo">
+                    <!-- Infos sur le fichier ici -->
+                </div>
+
+                <!-- Send Button -->
+                <button class="upload-btn text-white px-8 py-3 rounded-lg font-medium shadow-md hover:shadow-lg transform transition-all duration-300 hidden" id="uploadBtn" onclick="uploadFile()">
+                    📤 Envoyer le PDF
+                </button>
+            </div>
+
+            
+            <!-- Result -->
+            <div class="result rounded-lg p-4 font-medium hidden" id="result">
+            </div>
+        </div>
+        
+        <!-- Files List Card -->
+        <div class="bg-white rounded-lg shadow-lg p-8 md:p-10 mt-8 card transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-xl">
+            <div class="flex items-center justify-between mb-6">
+                <h3 class="text-xl md:text-2xl font-semibold text-gray-800 flex items-center">
+                    <span class="mr-3">📁</span>
+                    Fichiers uploadés
+                </h3>
+                <button class="upload-btn text-white px-6 py-2 rounded-lg font-medium shadow-md hover:shadow-lg transform transition-all duration-300" onclick="loadFiles()">
+                    🔄 Actualiser
+                </button>
+            </div>
+            
+            <div id="filesList" class="space-y-3">
+                <!-- Files will be populated here -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/import.js"></script>
+    <script src="../js/dark.js"></script>
+</body>
+</html>

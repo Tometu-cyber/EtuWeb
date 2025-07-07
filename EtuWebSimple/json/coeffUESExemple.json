@@ -1,0 +1,29 @@
+[
+  {
+    "nomRess": "TBRAE201 : SAÉ 2.01",
+    "Coeff semestre": 9,
+    "Coeff UE41": 0,
+    "Coeff UE42": 4,
+    "Coeff UE43": 5,
+    "Coeff UE44": 0,
+    "Coeff UE45": 0
+  },
+  {
+    "nomRess": "TBRAE202 : SAÉ 2.02",
+    "Coeff semestre": 16,
+    "Coeff UE41": 8,
+    "Coeff UE42": 4,
+    "Coeff UE43": 4,
+    "Coeff UE44": 0,
+    "Coeff UE45": 0
+  },
+  {
+    "nomRess": "TBRAE203 : SAÉ 2.03",
+    "Coeff semestre": 10,
+    "Coeff UE41": 0,
+    "Coeff UE42": 0,
+    "Coeff UE43": 0,
+    "Coeff UE44": 5,
+    "Coeff UE45": 5
+  }
+]

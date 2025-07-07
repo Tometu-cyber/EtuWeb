@@ -1,0 +1,182 @@
+[
+  {
+    "nomRess": "Code ECUE TBRAR414 : R4.Local - IA et cybersécurité : Objets Connectés",
+    "Coeff semestre": 9,
+    "Coeff UE41": 0,
+    "Coeff UE42": 9,
+    "Coeff UE43": 0,
+    "Coeff UE44": 0,
+    "Coeff UE45": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR401 : R4.01  - Infrastructures de sécurité",
+    "Coeff semestre": 16,
+    "Coeff UE41": 8,
+    "Coeff UE42": 8,
+    "Coeff UE43": 0,
+    "Coeff UE44": 0,
+    "Coeff UE45": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAE4HP : Heures projet",
+    "Coeff semestre": 0,
+    "Coeff UE41": 0,
+    "Coeff UE42": 0,
+    "Coeff UE43": 0,
+    "Coeff UE44": 0,
+    "Coeff UE45": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR402 : R4.02  - Transmissions avancées",
+    "Coeff semestre": 9,
+    "Coeff UE41": 0,
+    "Coeff UE42": 9,
+    "Coeff UE43": 0,
+    "Coeff UE44": 0,
+    "Coeff UE45": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR403 : R4.03  - Physique des télécoms",
+    "Coeff semestre": 12,
+    "Coeff UE41": 2,
+    "Coeff UE42": 10,
+    "Coeff UE43": 0,
+    "Coeff UE44": 0,
+    "Coeff UE45": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR404 : R4.04 - Réseaux cellulaires",
+    "Coeff semestre": 13,
+    "Coeff UE41": 3,
+    "Coeff UE42": 10,
+    "Coeff UE43": 0,
+    "Coeff UE44": 0,
+    "Coeff UE45": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR405 : R4.05 - Automatisation des tâches d'administration",
+    "Coeff semestre": 10,
+    "Coeff UE41": 4,
+    "Coeff UE42": 0,
+    "Coeff UE43": 6,
+    "Coeff UE44": 0,
+    "Coeff UE45": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR406 : R4.06 - Anglais professionnel 2",
+    "Coeff semestre": 7,
+    "Coeff UE41": 3,
+    "Coeff UE42": 2,
+    "Coeff UE43": 2,
+    "Coeff UE44": 0,
+    "Coeff UE45": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR407 : R4.07  Expression-Culture-Communication professionnelles",
+    "Coeff semestre": 7,
+    "Coeff UE41": 3,
+    "Coeff UE42": 2,
+    "Coeff UE43": 2,
+    "Coeff UE44": 0,
+    "Coeff UE45": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR408 : R4.08 - Projet Personnel et Professionnel",
+    "Coeff semestre": 3,
+    "Coeff UE41": 1,
+    "Coeff UE42": 1,
+    "Coeff UE43": 1,
+    "Coeff UE44": 0,
+    "Coeff UE45": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR412 : R4.Local - IOM :  Réseaux sans fil pour l'IoT",
+    "Coeff semestre": 9,
+    "Coeff UE41": 0,
+    "Coeff UE42": 6,
+    "Coeff UE43": 3,
+    "Coeff UE44": 0,
+    "Coeff UE45": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR413 : R4.Local -  DevCloud: Introduction aux microservices",
+    "Coeff semestre": 8,
+    "Coeff UE41": 0,
+    "Coeff UE42": 0,
+    "Coeff UE43": 8,
+    "Coeff UE44": 0,
+    "Coeff UE45": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR409 : R4.Cyber.09 - Cyber Sécurité des réseaux LAN",
+    "Coeff semestre": 10,
+    "Coeff UE41": 0,
+    "Coeff UE42": 0,
+    "Coeff UE43": 0,
+    "Coeff UE44": 5,
+    "Coeff UE45": 5
+  },
+  {
+    "nomRess": "Code ECUE TBRAR410 : R4.Cyber.10 -  Cyber : Cryptographie",
+    "Coeff semestre": 8,
+    "Coeff UE41": 0,
+    "Coeff UE42": 0,
+    "Coeff UE43": 0,
+    "Coeff UE44": 8,
+    "Coeff UE45": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR411 : R4.Cyber.11 - Sécurisation de services réseaux",
+    "Coeff semestre": 12,
+    "Coeff UE41": 0,
+    "Coeff UE42": 0,
+    "Coeff UE43": 0,
+    "Coeff UE44": 6,
+    "Coeff UE45": 6
+  },
+  {
+    "nomRess": "Code ECUE TBRAE401 : SAÉ 4.Cyber.01 - Sécuriser un système d'information",
+    "Coeff semestre": 57,
+    "Coeff UE41": 6,
+    "Coeff UE42": 13,
+    "Coeff UE43": 6,
+    "Coeff UE44": 16,
+    "Coeff UE45": 16
+  },
+  {
+    "nomRess": "Code ECUE TBRAE4ST : STAGE.Cyber : Stage",
+    "Coeff semestre": 94,
+    "Coeff UE41": 24,
+    "Coeff UE42": 25,
+    "Coeff UE43": 25,
+    "Coeff UE44": 10,
+    "Coeff UE45": 10
+  },
+  {
+    "nomRess": "Code ECUE TBRAE4PF : PORTFOLIO - Démarche portfolio",
+    "Coeff semestre": 16,
+    "Coeff UE41": 4,
+    "Coeff UE42": 4,
+    "Coeff UE43": 4,
+    "Coeff UE44": 2,
+    "Coeff UE45": 2
+  },
+  {
+    "nomRess": "Code ECUE TBRS4APA : Pénalité absence S4",
+    "Coeff semestre": 0,
+    "Coeff UE41": 0,
+    "Coeff UE42": 0,
+    "Coeff UE43": 0,
+    "Coeff UE44": 0,
+    "Coeff UE45": 0
+  },
+  {
+    "nomRess": "Code ECUE TBXS4BON : Bonus S4",
+    "Coeff semestre": 0,
+    "Coeff UE41": 0,
+    "Coeff UE42": 0,
+    "Coeff UE43": 0,
+    "Coeff UE44": 0,
+    "Coeff UE45": 0
+  }
+]

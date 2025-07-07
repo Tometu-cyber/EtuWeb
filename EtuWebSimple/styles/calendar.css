@@ -1,0 +1,50 @@
+/* Styles responsive pour le calendrier */
+#calendar {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Styles pour les événements du calendrier */
+.fc-event {
+    white-space: normal !important; /* Permet le retour à la ligne dans les événements */
+}
+
+/* Responsive pour les petits écrans */
+@media (max-width: 640px) {
+    .fc .fc-toolbar {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .fc .fc-toolbar-title {
+        font-size: 1.2rem;
+        margin: 0.5rem 0;
+    }
+    
+    /* Correction pour l'alignement des boutons de navigation sur mobile */
+    .fc .fc-toolbar-chunk {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0.25rem 0;
+        width: 100%;
+    }
+    
+    .fc .fc-button-group {
+        display: flex;
+        align-items: center;
+    }
+    
+    /* Style spécifique pour le bouton Today afin qu'il s'aligne correctement */
+    .fc .fc-today-button {
+        margin: 0 0.25rem !important;
+        height: 2rem !important;
+    }
+    
+    /* Ajustement de la taille de police pour les événements sur mobile */
+    .fc-event-title, .fc-event-time {
+        font-size: 0.75rem;
+    }
+}

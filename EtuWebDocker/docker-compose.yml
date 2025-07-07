@@ -1,0 +1,44 @@
+services:
+  etuweb:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: etuweb-container
+    ports:
+      - "8080:80"  # Port local:Port container
+    restart: unless-stopped
+    volumes:
+      # - ./notes:/usr/share/nginx/html/notes
+      # Optionnel: pour du développement en temps réel
+      # - ./:/usr/share/nginx/html:ro
+      - nginx_logs:/var/log/nginx
+      - notes_volume:/usr/share/nginx/html/notes
+    environment:
+      - NGINX_HOST=localhost
+      - NGINX_PORT=80
+    depends_on:
+      - api
+
+  api:
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: etuweb-api-container
+    ports:
+      - "3000:3000"  # Port pour l'API (optionnel, pour debugging)
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    volumes:
+      - ./api:/app
+      - /app/node_modules
+      - notes_volume:/app/shared-notes
+      # - ./notes:/app/notes
+
+volumes:
+  nginx_logs:
+  notes_volume:

@@ -1,0 +1,245 @@
+[
+  {
+    "nomRess": "Code ECUE TBRAR321 : R3.Local - IA : Introduction à l'IA pour les réseaux",
+    "Coeff semestre": 8,
+    "Coeff UE31": 0,
+    "Coeff UE32": 8,
+    "Coeff UE33": 0,
+    "Coeff UE34": 0,
+    "Coeff UE35": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR301 : R3.01 Réseau de campus",
+    "Coeff semestre": 9,
+    "Coeff UE31": 6,
+    "Coeff UE32": 3,
+    "Coeff UE33": 0,
+    "Coeff UE34": 0,
+    "Coeff UE35": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR302 : R3.02 - Réseaux opérateurs",
+    "Coeff semestre": 8,
+    "Coeff UE31": 4,
+    "Coeff UE32": 4,
+    "Coeff UE33": 0,
+    "Coeff UE34": 0,
+    "Coeff UE35": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR303 : R3.03 - Services réseaux avancés",
+    "Coeff semestre": 8,
+    "Coeff UE31": 8,
+    "Coeff UE32": 0,
+    "Coeff UE33": 0,
+    "Coeff UE34": 0,
+    "Coeff UE35": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR304 : R3.04 - Services d'annuaires",
+    "Coeff semestre": 4,
+    "Coeff UE31": 4,
+    "Coeff UE32": 0,
+    "Coeff UE33": 0,
+    "Coeff UE34": 0,
+    "Coeff UE35": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR305 : R3.05 - Chaînes de transmissions numériques",
+    "Coeff semestre": 16,
+    "Coeff UE31": 0,
+    "Coeff UE32": 16,
+    "Coeff UE33": 0,
+    "Coeff UE34": 0,
+    "Coeff UE35": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR306 : R3.06 - Fibres optiques et propagation",
+    "Coeff semestre": 12,
+    "Coeff UE31": 0,
+    "Coeff UE32": 12,
+    "Coeff UE33": 0,
+    "Coeff UE34": 0,
+    "Coeff UE35": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR307 : R3.07 - Réseaux d'accès",
+    "Coeff semestre": 8,
+    "Coeff UE31": 0,
+    "Coeff UE32": 8,
+    "Coeff UE33": 0,
+    "Coeff UE34": 0,
+    "Coeff UE35": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR308 : R3.08  - Consolidation de la programmation",
+    "Coeff semestre": 8,
+    "Coeff UE31": 0,
+    "Coeff UE32": 0,
+    "Coeff UE33": 8,
+    "Coeff UE34": 0,
+    "Coeff UE35": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR309 : R3.09 - Programmation événementielle",
+    "Coeff semestre": 6,
+    "Coeff UE31": 0,
+    "Coeff UE32": 0,
+    "Coeff UE33": 6,
+    "Coeff UE34": 0,
+    "Coeff UE35": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR310 : R3.10  - Gestion d'un système de bases de données",
+    "Coeff semestre": 3,
+    "Coeff UE31": 0,
+    "Coeff UE32": 1,
+    "Coeff UE33": 2,
+    "Coeff UE34": 0,
+    "Coeff UE35": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR311 : R3.11 - Anglais professionnel 1",
+    "Coeff semestre": 11,
+    "Coeff UE31": 5,
+    "Coeff UE32": 3,
+    "Coeff UE33": 3,
+    "Coeff UE34": 0,
+    "Coeff UE35": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR312 : R3.12 - Expression-Culture-Communication Professionnelles",
+    "Coeff semestre": 11,
+    "Coeff UE31": 3,
+    "Coeff UE32": 4,
+    "Coeff UE33": 4,
+    "Coeff UE34": 0,
+    "Coeff UE35": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR313 : R3.13  - Projet Personnel et Professionnel",
+    "Coeff semestre": 4,
+    "Coeff UE31": 2,
+    "Coeff UE32": 1,
+    "Coeff UE33": 1,
+    "Coeff UE34": 0,
+    "Coeff UE35": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR314 : R3.14   - Analyse de Fourier",
+    "Coeff semestre": 7,
+    "Coeff UE31": 0,
+    "Coeff UE32": 7,
+    "Coeff UE33": 0,
+    "Coeff UE34": 0,
+    "Coeff UE35": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR315 : R3.15-  Gestion de projet 2  : Utiliser les méthodes de gest",
+    "Coeff semestre": 6,
+    "Coeff UE31": 2,
+    "Coeff UE32": 2,
+    "Coeff UE33": 2,
+    "Coeff UE34": 0,
+    "Coeff UE35": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR320 : R3.Local- DevCloud Introduction avancée virtualisation",
+    "Coeff semestre": 6,
+    "Coeff UE31": 4,
+    "Coeff UE32": 2,
+    "Coeff UE33": 0,
+    "Coeff UE34": 0,
+    "Coeff UE35": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR317 : R3.Local - IOM : Introduction à l'IoT",
+    "Coeff semestre": 1,
+    "Coeff UE31": 0,
+    "Coeff UE32": 1,
+    "Coeff UE33": 0,
+    "Coeff UE34": 0,
+    "Coeff UE35": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR318 : R3.Local : Collecte et traitement de données",
+    "Coeff semestre": 5,
+    "Coeff UE31": 0,
+    "Coeff UE32": 1,
+    "Coeff UE33": 4,
+    "Coeff UE34": 0,
+    "Coeff UE35": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR319 : R3.Local - DevCloud : Écosystème et cloud",
+    "Coeff semestre": 2,
+    "Coeff UE31": 2,
+    "Coeff UE32": 0,
+    "Coeff UE33": 0,
+    "Coeff UE34": 0,
+    "Coeff UE35": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR322 : R3.Local - Probabilités et statistiques",
+    "Coeff semestre": 7,
+    "Coeff UE31": 2,
+    "Coeff UE32": 5,
+    "Coeff UE33": 0,
+    "Coeff UE34": 0,
+    "Coeff UE35": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAR316 : R3.Cyber.16 - Cyber : Méthodologie du pentesting",
+    "Coeff semestre": 30,
+    "Coeff UE31": 0,
+    "Coeff UE32": 0,
+    "Coeff UE33": 0,
+    "Coeff UE34": 16,
+    "Coeff UE35": 14
+  },
+  {
+    "nomRess": "Code ECUE TBRAE301 : SAÉ 3.01 - Mettre en 'uvre un système de transmission",
+    "Coeff semestre": 25,
+    "Coeff UE31": 0,
+    "Coeff UE32": 25,
+    "Coeff UE33": 0,
+    "Coeff UE34": 0,
+    "Coeff UE35": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAE302 : SAÉ 3.02 - Développer des applications communicantes",
+    "Coeff semestre": 22,
+    "Coeff UE31": 3,
+    "Coeff UE32": 3,
+    "Coeff UE33": 16,
+    "Coeff UE34": 0,
+    "Coeff UE35": 0
+  },
+  {
+    "nomRess": "Code ECUE TBRAE303 : SAÉ 3.Cyber.03 - Concevoir un réseau informatique sécurisé",
+    "Coeff semestre": 47,
+    "Coeff UE31": 15,
+    "Coeff UE32": 12,
+    "Coeff UE33": 0,
+    "Coeff UE34": 10,
+    "Coeff UE35": 10
+  },
+  {
+    "nomRess": "Code ECUE TBRAE304 : SAÉ 3 Cyber.04 - Découvrir le pentesting",
+    "Coeff semestre": 26,
+    "Coeff UE31": 6,
+    "Coeff UE32": 2,
+    "Coeff UE33": 2,
+    "Coeff UE34": 8,
+    "Coeff UE35": 8
+  },
+  {
+    "nomRess": "Code ECUE TBRAE3PF : PORTFOLIO  - Démarche portfolio",
+    "Coeff semestre": 0,
+    "Coeff UE31": 0,
+    "Coeff UE32": 0,
+    "Coeff UE33": 0,
+    "Coeff UE34": 0,
+    "Coeff UE35": 0
+  }
+]
