@@ -17,6 +17,10 @@ RUN npm ci --only=production
 # Copier le code source
 COPY . .
 
+# Créer le répertoire de l'application
+WORKDIR /app/EtuReadPdf/json
+WORKDIR /app
+
 # Créer un utilisateur non-root pour la sécurité
 RUN addgroup -g 1001 -S nodejs
 RUN adduser -S nodeuser -u 1001
