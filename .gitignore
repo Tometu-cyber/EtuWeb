@@ -1,0 +1,8 @@
+# Ignorer les fichiers système macOS
+.DS_Store
+
+# Ignore conf vscode
+.vscode/%
+
+# Ignore conf de test
+test/*
